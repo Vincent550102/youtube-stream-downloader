@@ -62,7 +62,8 @@ def record_live_stream(url):
 
 
 with open('stream_list.txt', 'r') as f:
-    live_urls = [url for url in f.read().splitlines() if url != ""]
+    live_urls = [url.split("|")[0]
+                 for url in f.read().splitlines() if url != ""]
 
 print(f"正在處理以下直播連結 {live_urls}")
 
